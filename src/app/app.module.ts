@@ -11,11 +11,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MainLayoutComponent } from './modules/layout/components/main-layout/main-layout.component';
+import { MainWhiteLayoutComponent } from './modules/layouts/white-theme/components/main-white-layout/main-white-layout.component';
+import { NotFoundComponent } from './modules/not-found/components/not-found/not-found.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        MainLayoutComponent
+        MainLayoutComponent,
+        MainWhiteLayoutComponent,
+        NotFoundComponent
     ],
     imports: [
         BrowserModule,
