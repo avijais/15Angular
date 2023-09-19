@@ -6,26 +6,27 @@ import { NotFoundComponent } from './modules/not-found/components/not-found/not-
 
 const tilesModule = () => import("../app/modules/tiles/tiles.module").then( m => m.TilesModule );
 const taskModule = () => import("../app/modules/task/task.module").then( m => m.TaskModule );
+const expenseModule = () => import("../app/modules/expense/expense.module").then( m => m.ExpenseModule );
+const reportModule = () => import("../app/modules/report/report.module").then( m => m.ReportModule );
+const masterModule = () => import("../app/modules/master/master.module").then( m => m.MasterModule );
 
 const routes: Routes = [
     { path: "", redirectTo: "/task", pathMatch: 'full' },
     {
         path: "",
+        component: MainWhiteLayoutComponent,
         children: [
-            {
-                path: "tiles",
-                component: MainLayoutComponent,
-                children: [
-                    { path: "", loadChildren: tilesModule },
-                ]
-            },
-            {
-                path: "task",
-                component: MainWhiteLayoutComponent,
-                children: [
-                    { path: "", loadChildren: taskModule },
-                ]
-            }
+            { path: "task", loadChildren: taskModule },
+            { path: "expense", loadChildren: expenseModule },
+            { path: "report", loadChildren: reportModule  },
+            { path: "master", loadChildren: masterModule  }
+        ]
+    },
+    {
+        path: "tiles",
+        component: MainLayoutComponent,
+        children: [
+            { path: "", loadChildren: tilesModule },
         ]
     },
     { path: "**", component: NotFoundComponent }

@@ -1,35 +1,40 @@
-<div class="sidebar">
-    <ul>
-        <li class="parent-menu-item">
-            <a routerLink="" [routerLinkActive]="'active'">
-                Expenses
-            </a>
-        </li>
-        <li class="parent-menu-item">
-            <a routerLink="" [routerLinkActive]="'active'">
-                Task
-            </a>
-        </li>
-        <li class="parent-menu-item">
-            <a routerLink="" [routerLinkActive]="'active'">
-                Reports
-            </a>
-        </li>
+<div style="display: flex; flex-direction: row;">
+    <div class="sidebar">
+        <ul>
+            <li class="parent-menu-item">
+                <a routerLink="expense" [routerLinkActive]="'active'">
+                    Expenses
+                </a>
+            </li>
+            <li class="parent-menu-item">
+                <a routerLink="task" [routerLinkActive]="'active'">
+                    Tasks
+                </a>
+            </li>
+            <li class="parent-menu-item">
+                <a routerLink="report/expense" [routerLinkActive]="'active'">
+                    Reports
+                </a>
+            </li>
 
-        <li class="parent-menu-item">
-            Masters
-            <ul>
-                <li class="sub-menu-item">
-                    <a routerLink="" [routerLinkActive]="'active'">
-                        Expense Category
-                    </a>
-                </li>
-                <li class="sub-menu-item">
-                    <a routerLink="" [routerLinkActive]="'active'">
-                        Task Category
-                    </a>
-                </li>
-            </ul>
-        </li>
-    </ul>
+            <li class="parent-menu-item">
+                Masters
+                <ul>
+                    <li class="sub-menu-item">
+                        <a routerLink="master/expense-category" [routerLinkActive]="'active'">
+                            Expense Category
+                        </a>
+                    </li>
+                    <li class="sub-menu-item">
+                        <a routerLink="master/task-category" [routerLinkActive]="'active'">
+                            Task Category
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div style="margin-left: 10px;">
+        <router-outlet></router-outlet>
+    </div>
 </div>
